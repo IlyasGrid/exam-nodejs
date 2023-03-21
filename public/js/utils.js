@@ -45,12 +45,12 @@ const createCards = (data) => {
         alert("can't delete todo")
     })
     up.addEventListener('click', async () => {
-        const response = await fetch(urlApi + "task/" + data.id + "?UPorDOWN=UP", { method: "DELETE" })
+        const response = await fetch(urlApi + "task/" + data.id + "?UPorDOWN=UP", { method: "Put" })
         if (response.ok)
             return
     })
     down.addEventListener('click', async () => {
-        const response = await fetch(urlApi + "task/" + data.id + "?UPorDOWN=DOWN", { method: "DELETE" })
+        const response = await fetch(urlApi + "task/" + data.id + "?UPorDOWN=DOWN", { method: "PUT" })
         if (response.ok)
             return
     })
