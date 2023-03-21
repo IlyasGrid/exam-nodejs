@@ -1,0 +1,139 @@
+* {
+    margin: 0;
+    padding: 0;
+  }
+  body {
+    background-color:rgb(30 41 59/1);;
+  }
+  .card {
+    margin: 20px;
+    width: auto;
+    height: 120px;
+    min-height: 120px;
+    border-radius: 30px;
+    background: rgba(24, 20, 20, 0.608);
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    color: #fff;
+  }
+  .card div{
+        display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: flex-start;
+  }
+  h2,
+  p {
+    padding: 10px;
+  }
+  button {
+    --color: #0c1f35;
+    font-family: inherit;
+    display: inline-block;
+    width: 6em;
+    height: 2.6em;
+    line-height: 2.5em;
+    overflow: hidden;
+    margin: 20px;
+    font-size: 17px;
+    z-index: 1;
+    color: var(--color);
+    border: 2px solid var(--color);
+    border-radius: 6px;
+    position: relative;
+  }
+a{
+  color: inherit;
+  font-style: none;
+}
+  button::before {
+    position: absolute;
+    content: "";
+    background: var(--color);
+    width: 150px;
+    height: 200px;
+    z-index: -1;
+    border-radius: 50%;
+  }
+
+  button:hover {
+    color: white;
+  }
+
+  button:before {
+    top: 100%;
+    left: 100%;
+    transition: 0.3s all;
+  }
+
+  button:hover::before {
+    top: -30px;
+    left: -30px;
+  }
+  .login-box {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 400px;
+  padding: 40px;
+  transform: translate(-50%, -50%);
+  background: rgba(24, 20, 20, 0.987);
+  box-sizing: border-box;
+  box-shadow: 0 15px 25px rgba(0,0,0,.6);
+  border-radius: 10px;
+}
+
+.login-box .user-box {
+  position: relative;
+}
+
+.login-box .user-box input {
+  width: 100%;
+  padding: 10px 0;
+  font-size: 16px;
+  color: #fff;
+  margin-bottom: 30px;
+  border: none;
+  border-bottom: 1px solid #fff;
+  outline: none;
+  background: transparent;
+}
+
+.login-box .user-box label {
+  position: absolute;
+  top: 0;
+  left: 0;
+  padding: 10px 0;
+  font-size: 16px;
+  color: #fff;
+  pointer-events: none;
+  transition: .5s;
+}
+
+.login-box .user-box input:focus ~ label,
+.login-box .user-box input:valid ~ label {
+  top: -20px;
+  left: 0;
+  color: #bdb8b8;
+  font-size: 12px;
+}
+
+.hidden{
+  display: none;
+}
+header{
+  display: flex;
+  justify-content: space-between;
+}
+footer{
+  position: fixed;
+  display: flex;
+  bottom: 0;
+  color: #fff;
+  padding: 20px;
+  width: 100%;
+  justify-content: center;
+  align-items: center;
+  background-color:rgb(39, 64, 106);;
+}
