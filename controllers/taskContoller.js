@@ -40,21 +40,22 @@ const changePriority = (req, res) => {
         } else {
             task.priority = theSwapTask.priority;
            theSwapTask.priority= theSwapTask.priority+1;
-           tasks = sortTasks();
+           [tasks[task.priority ], tasks[theSwapTask.priority]] = [tasks[theSwapTask.priority], tasks[task.priority]];
         }
     }
-    // if (UPorDOWN.toUpperCase() == ("DOWN")) {
-    //     let theSwapTask = tasks.find((t) => {
-    //         if (t.priority == (++task.priority))
-    //             return t;
-    //     })
-    //     if (!theSwapTask) {
-    //         task.priority++;
-    //     } else {
-    //         theSwapTask.priority--;
-    //         task.priority++;
-    //     }
-    // }
+    if (UPorDOWN.toUpperCase() == ("DOWN")) {
+        let theSwapTask = tasks.find((t) => {
+            if (t.priority == (task.priority+1))
+                return t;
+        })
+        if (!theSwapTask) {
+            task.priority++;
+        } else {
+            theSwapTask.priority--;
+            task.priority++;
+            [tasks[task.priority ], tasks[theSwapTask.priority]] = [tasks[theSwapTask.priority], tasks[task.priority]];
+        }
+    }
     return res.status(200).json(tasks);
 }
 
